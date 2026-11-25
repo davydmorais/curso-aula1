@@ -153,6 +153,60 @@ p strong { color: var(--fg); }
 .copy:focus-visible, .publish:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .note { font: 500 11px var(--mono); color: rgba(255,255,255,.4); text-align: center; }
 
+/* botão fixo de compra no cabeçalho (aparece depois do story 1) */
+.who .buy-mini { pointer-events: auto; margin-left: 8px; border: 0; border-radius: 999px; padding: 6px 11px; background: var(--cap); color: var(--ink); font: 800 12px var(--display); cursor: pointer; opacity: 0; transform: translateY(-4px); transition: opacity .2s, transform .2s; visibility: hidden; }
+.who .buy-mini.on { opacity: 1; transform: none; visibility: visible; }
+.who .step { margin-left: auto; }
+.who em, .who b, .who .buy-mini { white-space: nowrap; }
+@media (max-width: 420px) { .who em { display: none; } }
+
+/* 8 a 12 · vendas */
+.card { background: rgba(255,255,255,.07); border: 1px solid var(--faint); border-radius: 14px; padding: 13px 14px; }
+.card b { display: block; color: var(--fg); font-size: 15.5px; margin-bottom: 3px; }
+.card p { font-size: 14.5px; line-height: 1.45; }
+.stack { display: grid; gap: 9px; }
+.s8 { background: radial-gradient(90% 60% at 100% 0%, rgba(25,211,197,.4), transparent 60%), #0B1418; }
+.nums { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.num { background: rgba(255,255,255,.07); border: 1px solid var(--faint); border-radius: 14px; padding: 12px; }
+.num strong { display: block; font: 900 clamp(30px, 9vw, 40px)/1 var(--capf); letter-spacing: -.03em; color: var(--cap); font-variant-numeric: tabular-nums; }
+.num span { display: block; margin-top: 6px; font-size: 13px; line-height: 1.3; color: var(--dim); }
+.s9 { background: radial-gradient(90% 60% at 0% 100%, rgba(255,138,61,.45), transparent 60%), #160E0B; }
+.q { font: 800 13px var(--mono); color: var(--orange); letter-spacing: .02em; margin-bottom: 4px; }
+.s10 { background: radial-gradient(90% 60% at 50% 0%, rgba(123,77,255,.55), transparent 60%), #0F0B1E; }
+.ok-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.ok-list li { font-size: 14.5px; line-height: 1.35; color: var(--dim); padding-left: 22px; position: relative; }
+.ok-list li::before { content: "✓"; position: absolute; left: 0; color: var(--cap); font-weight: 800; }
+.ok-list li b { color: var(--fg); }
+.ok-list.no li::before { content: "✕"; color: var(--rec); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.split .card b { font: 700 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+.split .ok-list li { font-size: 13px; padding-left: 18px; }
+.s11 { background: radial-gradient(100% 60% at 50% 0%, rgba(255,225,77,.28), transparent 60%), #0E0B18; }
+.cmp { display: grid; gap: 7px; }
+.cmp div { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; color: var(--dim); padding: 9px 12px; border-radius: 10px; background: rgba(255,255,255,.05); }
+.cmp div span:last-child { font-family: var(--mono); font-size: 12.5px; text-align: right; }
+.cmp .us { background: rgba(255,225,77,.12); border: 1px solid rgba(255,225,77,.45); color: var(--fg); font-weight: 700; }
+.cmp .us span:last-child { color: var(--cap); }
+.price { text-align: center; }
+.price strong { display: block; font: 900 clamp(52px, 15vw, 68px)/1 var(--capf); letter-spacing: -.04em; }
+.price span { font: 500 12.5px var(--mono); color: var(--dim); }
+.guar { display: flex; gap: 12px; align-items: center; }
+.guar i { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--cap); display: grid; place-items: center; font: 900 20px var(--capf); font-style: normal; color: var(--cap); }
+.guar p { font-size: 13.5px; }
+.s12 { background: #0D0D12; }
+.s12 .in-s { overflow-y: auto; max-height: 100%; padding-bottom: 4px; }
+details { background: rgba(255,255,255,.06); border: 1px solid var(--faint); border-radius: 12px; padding: 11px 14px; }
+summary { cursor: pointer; font-weight: 700; font-size: 15px; list-style: none; display: flex; justify-content: space-between; gap: 10px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--cap); font: 700 18px/1 var(--mono); }
+details[open] summary::after { content: "–"; }
+details p { font-size: 14px; margin-top: 8px; }
+.buy-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; border: 0; border-radius: 14px; padding: 16px 18px; cursor: pointer; background: var(--cap); color: var(--ink); font: 800 17.5px var(--display); letter-spacing: -.02em; box-shadow: 0 0 0 4px rgba(255,225,77,.18), 0 14px 32px rgba(255,225,77,.22); }
+.buy-btn small { font: 700 13px var(--mono); }
+.buy-btn:focus-visible, .buy-mini:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+@media (max-height: 700px) { .s8 .num strong { font-size: 28px; } .s11 .cmp div:nth-child(2) { display: none; } .s10 .ok-list li:nth-child(4) { display: none; } }
+@media (max-height: 620px) { .s10 .split { display: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   .rec i, .hint b, .s4.in .wave i, .s5.in .clip, .s5.in .head { animation: none !important; }
   .cap span { transition: none; }
@@ -162,8 +216,8 @@ p strong { color: var(--fg); }
 
 <div class="hud gut" aria-hidden="true">
   <div class="hud-in">
-    <div class="bars" id="bars"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
-    <div class="who"><span class="av"><span>S</span></span><b>sabiaia.curso</b><em>· aula grátis</em><span class="step" id="step">1/7</span></div>
+    <div class="bars" id="bars"></div>
+    <div class="who"><span class="av"><span>S</span></span><b>sabiaia.curso</b><em>· aula grátis</em><span class="step" id="step">1</span><button class="buy-mini" id="buyMini" type="button" data-buy tabindex="-1">Curso R$ 29,90</button></div>
   </div>
 </div>
 
@@ -255,8 +309,79 @@ Regras:
       <img src="q7.jpg" alt="">
       <div><b>Novo Reel</b><ul class="chk"><li>Roteiro com gancho</li><li>Voz natural</li><li>Legenda e edição</li><li>Texto do post pronto</li></ul></div>
     </div>
-    <button class="publish" id="buy" type="button">Quero o curso completo <small>R$ 29,90</small></button>
+    <button class="publish" id="buy" type="button" data-buy>Quero o curso completo <small>R$ 29,90</small></button>
     <div class="toast" id="toast" aria-live="polite"></div>
+  </div></section>
+
+  <!-- 8 prova -->
+  <section class="s s8 gut"><div class="in-s">
+    <div class="kicker"><span class="pill" style="background:var(--teal)">Prova</span> canal real</div>
+    <h2>Tudo isso saiu de um canal de verdade.</h2>
+    <p>O <strong>@canalsabiaia</strong> começou do zero em novembro. Todo vídeo foi feito com o método do curso.</p>
+    <div class="nums">
+      <div class="num"><strong>20</strong><span>vídeos feitos com IA em menos de 1 mês</span></div>
+      <div class="num"><strong>9</strong><span>Shorts passaram de mil views no YouTube</span></div>
+      <div class="num"><strong>~2 mil</strong><span>views num Reel em só 4 horas</span></div>
+      <div class="num"><strong>0</strong><span>vezes que aparecemos ou gravamos a voz</span></div>
+    </div>
+    <p class="note">Números reais de um canal novo. Não é promessa de resultado.</p>
+  </div></section>
+
+  <!-- 9 medos -->
+  <section class="s s9 gut"><div class="in-s">
+    <div class="kicker"><span class="pill" style="background:var(--orange)">Dúvidas</span> o que trava quem começa</div>
+    <h2>"Isso não é pra mim." É sim.</h2>
+    <div class="stack">
+      <div class="card"><div class="q">"Nunca editei vídeo."</div><p>O curso começa do zero. Cada passo aparece na tela, do jeito que você vai fazer.</p></div>
+      <div class="card"><div class="q">"Não quero gastar com ferramenta."</div><p>Primeiro o caminho grátis. As pagas baratas só entram quando valem o preço, e a aula diz quando.</p></div>
+      <div class="card"><div class="q">"Não tenho tempo."</div><p>1 aula curta por módulo, direto ao ponto. Dá pra ver na pausa do almoço.</p></div>
+      <div class="card"><div class="q">"E se eu não gostar?"</div><p>Você tem 7 dias de garantia. Não serviu, pede o reembolso e recebe tudo de volta.</p></div>
+    </div>
+  </div></section>
+
+  <!-- 10 o que recebe + pra quem é -->
+  <section class="s s10 gut"><div class="in-s">
+    <div class="kicker"><span class="pill" style="background:var(--violet);color:#fff">O que você recebe</span></div>
+    <h2>Tudo pro primeiro vídeo.</h2>
+    <ul class="ok-list">
+      <li><b>6 módulos em vídeo:</b> tema, roteiro, voz, imagem, edição e postagem</li>
+      <li><b>Prompts prontos</b> pra copiar e colar na sua IA</li>
+      <li><b>Lista de ferramentas</b> grátis e pagas baratas, com preço</li>
+      <li><b>Texto embaixo de cada aula</b> pra consultar sem rever o vídeo</li>
+      <li><b>Acesso pra sempre</b> na Kiwify, módulos novos inclusos</li>
+    </ul>
+    <div class="split">
+      <div class="card"><b>É pra você</b><ul class="ok-list"><li>Quer canal sem aparecer</li><li>Nunca editou</li><li>Quer gastar pouco</li></ul></div>
+      <div class="card"><b>Não é pra você</b><ul class="ok-list no"><li>Não vai postar com frequência</li><li>Quer viralizar sem testar</li></ul></div>
+    </div>
+  </div></section>
+
+  <!-- 11 preço -->
+  <section class="s s11 gut"><div class="in-s">
+    <div class="kicker"><span class="pill">Preço</span> compare</div>
+    <div class="cmp">
+      <div><span>Pagar um editor</span><span>a cada vídeo</span></div>
+      <div><span>Assinar várias IAs</span><span>todo mês</span></div>
+      <div class="us"><span>Este curso</span><span>uma vez só</span></div>
+    </div>
+    <div class="price"><strong>R$ 29,90</strong><span>pagamento único · Pix ou cartão · menos de R$ 1 por dia no 1º mês</span></div>
+    <button class="buy-btn" type="button" data-buy>Quero o curso completo <small>→</small></button>
+    <div class="guar"><i>7</i><p><strong>Risco zero.</strong> Assista, teste e, se não servir, peça o reembolso em até 7 dias. Compra segura pela Kiwify.</p></div>
+  </div></section>
+
+  <!-- 12 perguntas -->
+  <section class="s s12 gut"><div class="in-s">
+    <div class="kicker"><span class="pill" style="background:#fff">Perguntas</span> antes de comprar</div>
+    <h2>Ficou alguma dúvida?</h2>
+    <div class="stack">
+      <details><summary>Preciso aparecer ou gravar a voz?</summary><p>Não. A narração é feita por IA e as cenas também. O Sabia, IA? nunca mostrou rosto nem voz de ninguém.</p></details>
+      <details><summary>Preciso de computador bom?</summary><p>Não. As ferramentas do curso rodam na internet, no navegador ou no app.</p></details>
+      <details><summary>Quanto mais eu vou gastar?</summary><p>Dá pra começar sem gastar nada. O curso mostra as opções pagas baratas e quando vale pagar por elas.</p></details>
+      <details><summary>Os módulos já estão todos prontos?</summary><p>O curso está em pré-venda: os primeiros módulos já estão na plataforma e os outros saem 1 por semana. Você paga uma vez e recebe todos.</p></details>
+      <details><summary>Como recebo o acesso?</summary><p>Na hora, pelo e-mail da compra, na área de membros da Kiwify.</p></details>
+      <details><summary>Vou viralizar com certeza?</summary><p>Ninguém pode prometer isso. O curso ensina o processo; o resultado depende de postar com constância e testar temas.</p></details>
+    </div>
+    <button class="buy-btn" type="button" data-buy>Entrar por R$ 29,90 <small>→</small></button>
   </div></section>
 </main>
 
@@ -264,7 +389,11 @@ Regras:
 (function () {
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var deck = document.getElementById('deck'), S = [].slice.call(document.querySelectorAll('.s'));
+  var barsBox = document.getElementById('bars');
+  barsBox.innerHTML = S.map(function () { return '<i><b></b></i>'; }).join('');
   var bars = document.querySelectorAll('#bars b'), step = document.getElementById('step');
+  var mini = document.getElementById('buyMini');
+  step.textContent = '1/' + S.length;
 
   // legenda: quebra em palavras
   document.querySelectorAll('[data-cap]').forEach(function (c) {
@@ -280,6 +409,9 @@ Regras:
     bars.forEach(function (b, i) { b.style.width = Math.max(0, Math.min(1, pos - i + 1)) * 100 + '%'; });
     var n = Math.round(pos);
     if (n !== cur) { cur = n; step.textContent = (n + 1) + '/' + S.length; }
+    // botão fixo: aparece do story 2 em diante, some nos stories que já têm botão grande (7, 11)
+    var showMini = n >= 1 && n !== 6 && n !== 10;
+    mini.classList.toggle('on', showMini); mini.tabIndex = showMini ? 0 : -1;
     S.forEach(function (s, i) { s.classList.toggle('in', Math.abs(pos - i) < .5); });
   }
   deck.addEventListener('scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
@@ -313,8 +445,16 @@ Regras:
     function sel() { ta.style.position = 'static'; ta.style.width = '100%'; ta.style.height = '9em'; ta.select(); cb.textContent = 'Selecionado'; }
     try { navigator.clipboard.writeText(ta.value).then(ok, sel); } catch (e) { sel(); }
   });
-  document.getElementById('buy').addEventListener('click', function () {
-    window.location.href = 'https://pay.kiwify.com.br/GoN83kZ';
+  // checkout: repassa as etiquetas utm_* do link da página (ex.: ?utm_source=ig&utm_content=reel20) pra Kiwify saber de onde veio a venda
+  var CHECKOUT = 'https://pay.kiwify.com.br/GoN83kZ';
+  function checkoutUrl() {
+    var src = new URLSearchParams(location.search), out = new URLSearchParams();
+    src.forEach(function (v, k) { if (/^utm_|^src$|^sck$/.test(k)) out.set(k, v); });
+    var q = out.toString();
+    return q ? CHECKOUT + '?' + q : CHECKOUT;
+  }
+  document.querySelectorAll('[data-buy]').forEach(function (b) {
+    b.addEventListener('click', function () { window.location.href = checkoutUrl(); });
   });
 })();
 </script>
